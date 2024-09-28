@@ -1,0 +1,1 @@
+{"version":3,"file":"shipping-location.d.ts","sourceRoot":"","sources":["../../models/shipping-location.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,iBAAiB;IAC9B,EAAE,EAAE,MAAM,CAAC;IACX,MAAM,EAAE,MAAM,CAAC;IACf,QAAQ,EAAE,MAAM,CAAC;IACjB,QAAQ,EAAE,MAAM,CAAC;IACjB,IAAI,EAAE,MAAM,CAAC;IACb,MAAM,EAAE,MAAM,CAAC;IACf,UAAU,EAAE,MAAM,CAAC;IACnB,OAAO,EAAE,MAAM,CAAC;CACnB"}

@@ -1,0 +1,106 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class checkout {
+   userid: bigint
+   userinfoid: bigint
+   subtotal: numeric(10,2)
+   discounts: numeric(10,2)
+   tax: numeric(10,2)
+   shipping: numeric(10,2)
+   total: numeric(10,2)
+   id: bigint
+}
+class checkout_items {
+   checkoutid: bigint
+   productid: bigint
+   productname: varchar(255)
+   imagehref: varchar(255)
+   quantity: integer
+   total: numeric(10,2)
+   id: bigint
+}
+class item {
+   user_id: integer
+   user_info_id: integer
+   subtotal: numeric(10,2)
+   discounts: numeric(10,2)
+   tax: numeric(10,2)
+   shipping: numeric(10,2)
+   total: numeric(10,2)
+   id: integer
+}
+class order_items {
+   order_id: bigint
+   product_id: bigint
+   product_name: varchar(255)
+   image_href: varchar(255)
+   quantity: integer
+   total: numeric(10,2)
+   id: bigint
+}
+class orders {
+   checkoutid: bigint
+   userid: bigint
+   userinfoid: bigint
+   id: bigint
+}
+class orders_credix {
+   orderid: bigint
+   userid: bigint
+   payload: json
+   response: json
+   response_status: integer
+   id: bigint
+}
+class products {
+   name: varchar(255)
+   imagehref: varchar(255)
+   price: numeric(10,2)
+   id: bigint
+}
+class user_info {
+   userid: bigint
+   address1: varchar(255)
+   address2: varchar(255)
+   city: varchar(255)
+   region: varchar(255)
+   postalcode: varchar(255)
+   country: varchar(255)
+   id: bigint
+}
+class userinfo {
+   user_id: bigint
+   address1: varchar(255)
+   address2: varchar(255)
+   city: varchar(255)
+   region: varchar(255)
+   postalcode: varchar(255)
+   country: varchar(255)
+   id: bigint
+}
+class users {
+   name: varchar(255)
+   password: varchar(255)
+   email: varchar(255)
+   id: bigint
+}
+
+checkout        -[#595959,plain]-^  user_info      : "userinfoid:id"
+checkout        -[#595959,plain]-^  users          : "userid:id"
+checkout_items  -[#595959,plain]-^  products       : "productid:id"
+item            -[#595959,plain]-^  user_info      : "user_info_id:id"
+item            -[#595959,plain]-^  users          : "user_id:id"
+order_items     -[#595959,plain]-^  orders         : "order_id:id"
+order_items     -[#595959,plain]-^  products       : "product_id:id"
+orders          -[#595959,plain]-^  checkout       : "checkoutid:id"
+orders          -[#595959,plain]-^  user_info      : "userinfoid:id"
+orders          -[#595959,plain]-^  users          : "userid:id"
+orders_credix   -[#595959,plain]-^  orders         : "orderid:id"
+orders_credix   -[#595959,plain]-^  users          : "userid:id"
+user_info       -[#595959,plain]-^  users          : "userid:id"
+userinfo        -[#595959,plain]-^  users          : "user_id:id"
+@enduml

@@ -1,6 +1,10 @@
 This is a Monorepo project in development. The application will be a checkout page for a theoretical customer.
 
-<iframe src="https://drive.google.com/file/d/1_RIwTj2Jz8rHB8CbGyeKKvkbS_SMLjkn/preview" width="640" height="480" allow="autoplay"></iframe>
+<video controls width="640">
+  <source src="https://drive.google.com/file/d/1_RIwTj2Jz8rHB8CbGyeKKvkbS_SMLjkn/preview" type="video/webm" />
+</video>
+
+<!-- <iframe src="https://drive.google.com/file/d/1_RIwTj2Jz8rHB8CbGyeKKvkbS_SMLjkn/preview" width="640" height="480" allow="autoplay"></iframe> -->
 
 ## Getting Started
 

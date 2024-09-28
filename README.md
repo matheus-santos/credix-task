@@ -1,6 +1,6 @@
 This is a Monorepo project in development. The application will be a checkout page for a theoretical customer.
 
-- Flight Test: https://drive.google.com/file/d/1_RIwTj2Jz8rHB8CbGyeKKvkbS_SMLjkn/view?usp=sharing
+<iframe src="https://drive.google.com/file/d/1_RIwTj2Jz8rHB8CbGyeKKvkbS_SMLjkn/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Getting Started
 

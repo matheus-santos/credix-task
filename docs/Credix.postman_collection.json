@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "8c64c4ac-345f-4e8c-8c22-ce988bce82bb",
+		"name": "Credix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38618516"
+	},
+	"item": [
+		{
+			"name": "CrediPay",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CREDIPAY-API-KEY",
+								"value": "{{crediPayApiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"externalId\": \"REF-10230456\",\n  \"subtotalAmountCents\": 1020000,\n  \"taxAmountCents\": 81600,\n  \"shippingCostCents\": 5000,\n  \"shippingLocation\": {\n    \"address1\": \"Rua da Consolação, 930\",\n    \"address2\": \"Apto 101\",\n    \"city\": \"São Paulo\",\n    \"region\": \"São Paulo\",\n    \"postalCode\": \"01302000\",\n    \"country\": \"Brazil\"\n  },\n  \"estimatedDeliveryDateUTC\": \"2024-02-05T00:00:00Z\",\n  \"installments\": [\n    {\n      \"maturityDate\": \"2024-02-10T00:00:00Z\",\n      \"faceValueCents\": 1020000\n    }\n  ],\n  \"buyerTaxId\": \"26900161000125\",\n  \"sellerTaxId\": \"37154724000108\",\n  \"items\": [\n    {\n      \"productId\": \"7891910000197\",\n      \"productName\": \"Cerveja Skol 350ml\",\n      \"quantity\": 1000,\n      \"unitPriceCents\": 1020\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{crediPayHost}}/{{crediPayApiVersion}}/orders",
+							"protocol": "https",
+							"host": [
+								"{{crediPayHost}}"
+							],
+							"path": [
+								"{{crediPayApiVersion}}",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/checkout/1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"checkout",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"checkoutId\": 1,\n    \"userId\": 1,\n    \"userInfoId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/orders",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
